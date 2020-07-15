@@ -48,12 +48,12 @@ def create_app(test_config=None):
             return jsonify({
                 'success': True,
                 'movies': format_movies
-                            })
+            })
         else:
             return jsonify({
                 'success': True,
                 'movies': 'There is no movie with that name in our system'
-                })
+            })
 
     '''
         POSTs /movies
@@ -105,9 +105,9 @@ def create_app(test_config=None):
             return jsonify({
                 'success': True,
                 'movies': [movie.format()]
-                })
+            })
 
-        except:
+        except BaseException:
             abort(422)
 
     '''
@@ -118,17 +118,17 @@ def create_app(test_config=None):
     @requires_auth('delete:movies')
     def delete_movie(jwt, movie_id):
         try:
-           movie = Movie.query.filter(Movie.id == movie_id).one_or_none()
-           if movie is None:
-            abort(404)
+            movie = Movie.query.filter(Movie.id == movie_id).one_or_none()
+            if movie is None:
+                abort(404)
 
-            movie.delete()
+                movie.delete()
 
-            return jsonify({
-                'success': True,
-                'movies': movie.id
+                return jsonify({
+                    'success': True,
+                    'movies': movie.id
                 })
-        except:
+        except BaseException:
             abort(422)
 
 # ACTORS
@@ -143,10 +143,10 @@ def create_app(test_config=None):
             actors = Actor.query.all()
             actors_formatted = [actor.format() for actor in actors]
             return jsonify({
-                            'success': True,
-                            'actors': actors_formatted
-                            })
-        except:
+                'success': True,
+                'actors': actors_formatted
+            })
+        except BaseException:
             abort(422)
 
     '''
@@ -175,10 +175,10 @@ def create_app(test_config=None):
             actors_formatted = [actor.format()]
 
             return jsonify({
-                            'success': True,
-                            'actors': actors_formatted
-                            })
-        except:
+                'success': True,
+                'actors': actors_formatted
+            })
+        except BaseException:
             abort(422)
 
     '''
@@ -210,9 +210,9 @@ def create_app(test_config=None):
             return jsonify({
                 'success': True,
                 'actors': [actor.format()]
-                })
+            })
 
-        except:
+        except BaseException:
             abort(422)
 
     '''
@@ -233,8 +233,8 @@ def create_app(test_config=None):
             return jsonify({
                 'success': True,
                 'actors': actor.id
-                })
-        except:
+            })
+        except BaseException:
 
             abort(422)
 
@@ -246,34 +246,32 @@ def create_app(test_config=None):
     @app.errorhandler(500)
     def internal_server_error(error):
         return (jsonify({'success': False, 'error': 500,
-                'message': 'Internal server error'}), 500)
+                         'message': 'Internal server error'}), 500)
 
     @app.errorhandler(400)
     def bad_request(error):
         return (jsonify({'success': False, 'error': 400,
-                'message': 'Bad Request'}), 400)
-
+                         'message': 'Bad Request'}), 400)
 
     @app.errorhandler(401)
     def unauthorized(error):
         return (jsonify({'success': False, 'error': 401,
-                'message': 'Unauthorized'}), 401)
+                         'message': 'Unauthorized'}), 401)
 
     @app.errorhandler(404)
     def not_found(error):
         return (jsonify({'success': False, 'error': 404,
-                'message': 'Not found'}), 404)
+                         'message': 'Not found'}), 404)
 
     @app.errorhandler(422)
     def unprocessable(error):
         return (jsonify({'success': False, 'error': 422,
-                'message': 'Unable to process this instruction'}), 422)
-
+                         'message': 'Unable to process this instruction'}), 422)
 
     @app.errorhandler(405)
     def not_allowed(error):
         return (jsonify({'success': False, 'error': 405,
-                'message': 'Method not allowed'}), 405)
+                         'message': 'Method not allowed'}), 405)
 
     return app
 

@@ -10,6 +10,8 @@ casting_db = SQLAlchemy()
 Setup_db(app)
 
 '''
+
+
 def setup_db(app):
     app.config["SQLALCHEMY_DATABASE_URI"] = os.environ['DATABASE_URL']
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
@@ -18,13 +20,18 @@ def setup_db(app):
     casting_db.create_all()
 
 # It can be used to drop existing tables and create a new database
+
+
 def db_drop_and_create_all():
     casting_db.drop_all()
     casting_db.create_all()
 
+
 '''
 Movies with titles and release dates
 '''
+
+
 class Movie(casting_db.Model):
     __tablename__ = 'movies'
 
@@ -49,15 +56,17 @@ class Movie(casting_db.Model):
 
     def format(self):
         return {
-          'id': self.id,
-          'title': self.movie_title,
-          'release_date': self.movie_release_date
+            'id': self.id,
+            'title': self.movie_title,
+            'release_date': self.movie_release_date
         }
 
 
 '''
 Actors with name, age and gender
 '''
+
+
 class Actor(casting_db.Model):
     __tablename__ = 'actors'
 
@@ -84,8 +93,8 @@ class Actor(casting_db.Model):
 
     def format(self):
         return {
-          'id': self.id,
-          'name': self.name,
-          'age': self.age,
-          'gender': self.gender
-    }
+            'id': self.id,
+            'name': self.name,
+            'age': self.age,
+            'gender': self.gender
+        }

@@ -14,6 +14,8 @@ API_AUDIENCE = 'http://localhost:5000'
 AuthError Exception
 A standardized way to communicate auth failure modes
 '''
+
+
 class AuthError(Exception):
     def __init__(self, error, status_code):
         self.error = error
@@ -26,7 +28,9 @@ class AuthError(Exception):
                 }, self.status_code]
 
 # Auth Header
-## Obtains authorization token from request header
+# Obtains authorization token from request header
+
+
 def get_token_auth_header():
     # Validations
     authorization_header = request.headers.get('Authorization', None)
@@ -59,7 +63,9 @@ def get_token_auth_header():
 
     return token
 
-#Checks if user has access given its Auth0 credentials
+# Checks if user has access given its Auth0 credentials
+
+
 def check_permissions(permission, payload):
     if 'permissions' not in payload:
         raise AuthError({
@@ -71,11 +77,13 @@ def check_permissions(permission, payload):
         raise AuthError({
             'code': 'unauthorized',
             'description': 'Permission not Found.'
-        },401)
+        }, 401)
 
     return True
 
-#Checks that token is valid
+# Checks that token is valid
+
+
 def verify_decode_jwt(token):
     jsonurl = urlopen(f'https://{AUTH0_DOMAIN}/.well-known/jwks.json')
     jwks = json.loads(jsonurl.read())
@@ -101,9 +109,9 @@ def verify_decode_jwt(token):
             payload = jwt.decode(
                 token,
                 rsa_key,
-                algorithms = ALGORITHMS,
-                audience = API_AUDIENCE,
-                issuer = 'https://' + AUTH0_DOMAIN + '/'
+                algorithms=ALGORITHMS,
+                audience=API_AUDIENCE,
+                issuer='https://' + AUTH0_DOMAIN + '/'
             )
 
             return payload
@@ -126,11 +134,13 @@ def verify_decode_jwt(token):
                 'description': 'Unable to parse authentication token.'
             }, 400)
     raise AuthError({
-                'code': 'invalid_header',
+        'code': 'invalid_header',
                 'description': 'Unable to find the appropriate key.'
     }, 400)
 
-#Python decorator to ensure that all appropriate checks are performed
+# Python decorator to ensure that all appropriate checks are performed
+
+
 def requires_auth(permission=''):
     def requires_auth_decorator(f):
         @wraps(f)
@@ -139,7 +149,7 @@ def requires_auth(permission=''):
                 token = get_token_auth_header()
                 payload = verify_decode_jwt(token)
                 check_permissions(permission, payload)
-            except:
+            except BaseException:
                 abort(401)
             return f(payload, *args, **kwargs)
 

@@ -21,7 +21,7 @@ class CastingAgencyTestCase(unittest.TestCase):
 
         self.new_movie = {
             'title': 'Test movie',
-            'release_date' : datetime.date(2020, 7, 31),
+            'release_date': datetime.date(2020, 7, 31),
         }
 
         self.new_actor = {
@@ -54,18 +54,20 @@ class CastingAgencyTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 404)
         self.assertEqual(data['success'], False)
         self.assertEqual(data['error'], 404)
-        self.assertEqual(data['message'], 'There is no movie with that name in our system')
+        self.assertEqual(
+            data['message'],
+            'There is no movie with that name in our system')
 
     def test_add_movie(self):
-        response = self.client().post('/movies/create', json=self.new_movie)
+        response = self.client().post('/movies', json=self.new_movie)
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(data['success'], True)
         self.assertEqual(data['new_movie']['title'], 'Test Movie')
 
     def test_fail_add_movie(self):
-        response = self.client.post('/movies/create',
-            json={'title': 'Test Movie'})
+        response = self.client.post('/movies',
+                                    json={'title': 'Test Movie'})
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 422)
         self.assertEqual(data['success'], False)
@@ -73,14 +75,14 @@ class CastingAgencyTestCase(unittest.TestCase):
         self.assertEqual(data['message'], 'Unable to process this instruction')
 
     def test_delete_movie(self):
-        response = self.client().delete('/movies/delete/2')
+        response = self.client().delete('/movies/2')
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(data['success'], True)
         self.assertTrue(data['deleted'])
 
     def test_fail_delete_movie(self):
-        response = self.client().delete('/movies/delete/1000000000000000000000')
+        response = self.client().delete('/movies/1000000000000000000000')
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 422)
         self.assertEqual(data['success'], False)
@@ -88,14 +90,14 @@ class CastingAgencyTestCase(unittest.TestCase):
         self.assertEqual(data['message'], 'Unable to process this instruction')
 
     def test_patch_movie(self):
-        response = self.client().patch('/movies/patch/2', json=self.new_movie)
+        response = self.client().patch('/movies/2', json=self.new_movie)
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(data['success'], True)
         self.assertTrue(data['movie_id'])
 
     def test_fail_patch_movie(self):
-        response = self.client().patch('/movies/patch/3000', json=self.new_movie)
+        response = self.client().patch('/movies/3000', json=self.new_movie)
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 422)
         self.assertEqual(data['success'], False)
@@ -116,17 +118,20 @@ class CastingAgencyTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 404)
         self.assertEqual(data['success'], False)
         self.assertTrue(data['error'], 404)
-        self.assertEqual(data['message'], 'There is no actor with that name in our system')
+        self.assertEqual(
+            data['message'],
+            'There is no actor with that name in our system')
 
     def test_create_actor(self):
-        response = self.client().post('/actors/create', json=self.new_actor)
+        response = self.client().post('/actors', json=self.new_actor)
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(data['success'], True)
         self.assertEqual(data['new_actor']['name'], 'Arthur Schopenhauer')
 
     def test_fail_create_actor(self):
-        response = self.client().post('/actors/create', json={'name': 'Arthur Schopenhauer'})
+        response = self.client().post(
+            '/actors', json={'name': 'Arthur Schopenhauer'})
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 422)
         self.assertEqual(data['success'], False)
@@ -134,14 +139,14 @@ class CastingAgencyTestCase(unittest.TestCase):
         self.assertEqual(data['message'], 'Unable to process this instruction')
 
     def test_delete_actor(self):
-        response = self.client().delete('/actors/delete/1')
+        response = self.client().delete('/actors/1')
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(data['success'], True)
         self.assertTrue(data['deleted'])
 
     def test_fail_delete_actor(self):
-        response = self.client().delete('/actors/delete/1000000000000000000000')
+        response = self.client().delete('/actors/1000000000000000000000')
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 422)
         self.assertEqual(data['success'], False)
@@ -149,15 +154,15 @@ class CastingAgencyTestCase(unittest.TestCase):
         self.assertEqual(data['message'], 'Unable to process this instruction')
 
     def test_patch_actor(self):
-        response = self.client().patch('/actors/patch/2', json=self.new_actor)
+        response = self.client().patch('/actors/2', json=self.new_actor)
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(data['success'], True)
         self.assertTrue(data['actor_id'])
 
     def test_fail_patch_actor(self):
-        response = self.client().patch('/actors/patch/1000000000000000000000',
-            json=self.new_actor)
+        response = self.client().patch('/actors/1000000000000000000000',
+                                       json=self.new_actor)
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 422)
         self.assertEqual(data['success'], False)
