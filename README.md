@@ -29,13 +29,11 @@ deletes actors and movies.
 To login: https://dev-s7inf-u3.eu.auth0.com/authorize?audience=http://localhost:5000&response_type=token&client_id=K0AvvStjD7e71HGatG2WozflAeN3itBg&redirect_uri=http://localhost:8100
 Casting Assistant logins with:assistant@castingagency.com
 Pw: Assistant12345
-JWT TOKEN: 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjJfMF9Cem9raDMtdjYxVzdOLW4zQiJ9.eyJpc3MiOiJodHRwczovL2Rldi1zN2luZi11My5ldS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWYwMWE4YzA3NjAwNDQwMDEzOTlmMGI0IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIiwiaWF0IjoxNTk0ODA0NTMzLCJleHAiOjE1OTQ4MTE3MzMsImF6cCI6IkswQXZ2U3RqRDdlNzFIR2F0RzJXb3pmbEFlTjNpdEJnIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyJdfQ.CR7KFqANDxKRl0vDk6uMrEnxB3YSZOXyjv8uuV9ZvlpUNZn4KWqzh4DgscUsYkdNG6zlpZxwIdQLVp4f5FSCsffpSylGI0MnBpeu16nk1WE-W2jkmi319AsaLYXvqS0pZUtCCRAkbgAXwRReeWqIWqsl98bubjDyC81Pjy1iPtsHkNDxX_OdejxfQOIiNMrsl-slcX6SWUrzJjUR7dwbEEa8VzBZisbWqa9_TFobJgRzlJFVqotjUJQDF4gZ_IM3mU3IHgBzcIjADv2yII4ZgIvwPApIN0GFEmd6v1kbGepp_AIkfP8cHJFUlMV9mEDaLAlcgNB3RO79jeuFGU_S8g'
 Casting Director logins with:director@castingagency.com
 Pw: Director12345
-JWT TOKEN: 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjJfMF9Cem9raDMtdjYxVzdOLW4zQiJ9.eyJpc3MiOiJodHRwczovL2Rldi1zN2luZi11My5ldS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWYwMWE4Njc3NjAwNDQwMDEzOTlmMDdkIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIiwiaWF0IjoxNTk0NzIwNDE2LCJleHAiOjE1OTQ3Mjc2MTYsImF6cCI6IkswQXZ2U3RqRDdlNzFIR2F0RzJXb3pmbEFlTjNpdEJnIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyJdfQ.qUDl6nnP-JgcO7bylHpcwKQbZMmGQFuuFMHiYWSqp6Am3yoyt9S52Gom1MNzjoh5xFDpjYAMzkqFDlQc1p3fB_R3owfkulWmRuIrDezqCdXGcRpAIKOrCsBTCooXbJ6_H49_agfg_mWm9vwOltSipZhjHhXUcCX1l-BlxO9f2EalVGAa9R1JtOOr7ebGXj8QeAPybxvzFICuWgPc5jB5aJLmYUhY1vI3AySzvZbZYIHNKAFlYIss-VvL-dY6pczHJQcvctla8r_zPLH0Q2rRsD1heXhrNfWFavdMDgW6TrcJMG4IuwwsNCNFay4wRtO0i8VrI7XrG6GwFlsFJM80Vw'
+JWT TOKEN:
 Executive Producer logins with:producer@castingagency.com
 Pw:Producer12345
-JWT TOKEN: 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjJfMF9Cem9raDMtdjYxVzdOLW4zQiJ9.eyJpc3MiOiJodHRwczovL2Rldi1zN2luZi11My5ldS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWYwMWFhMjU2YjI1NjEwMDE5MTA4ZGEyIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIiwiaWF0IjoxNTk0NzIwNTIzLCJleHAiOjE1OTQ3Mjc3MjMsImF6cCI6IkswQXZ2U3RqRDdlNzFIR2F0RzJXb3pmbEFlTjNpdEJnIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0Om1vdmllcyJdfQ.kS19x8eohsj0nNv2zj9XMvnwwDSa6rPmNj3xazN96v5GNmdR872aCE1vQrL_Nj_i6NX4ANdwJLA_V7xv6MDqN3vJUUoiu6R7Cahmar76O7cECI_HhkWfPiqxXZLnWrd_0rzAN9taBcno0ZTyOAcm1n6rxnC7S0DHAdXF3kwH8yAROG44SSf3vR8S6rOXXSSBOBFcOhko0UyeijLNFSXPz1uZpbtkq60VUHn1cGuZmBP5LktgHgz8Rxn_-w0PQywiFNGkHERrf2C1PzMwunCmzmdq2POC0DiPeX2GrVAE3Ia31TiR96s9NxuKEOVYRoP_fXEiVKE3FrJKVLm2Ul-E8w'
 
 ##### Project Dependencies
 
@@ -91,6 +89,82 @@ python3 app.py
 
 API Documentation
 
+#RBAC for Casting Assistant
+GET/movies
+It returns a list of movies.
+If it finds the movie it returns success = True, else the following message:"
+There is no movie with that name in our system"
+Example of successful get/movies request:
+{
+    "movies": [
+        {
+            "title": "Test movie"
+            "release_date": "Fri, 31 Jul 2020 00:00:00 CET",
+        },
+    ],
+    "success": true
+}
+
+GET/actors
+It returns a list of actors.
+If it finds the actor it returns success = True, else the following message:"
+There is no actor with that name in our system"
+Examples of successful get/actors request:
+{
+    "actors": [
+        {
+            "name": "Arthur Schopenhauer",
+            "age": 56,
+            "gender": "male",
+            "movie_id": 1
+        },
+    ],
+    "success": true
+}
+
+Examples of unsuccessful post/actors, post/movies, delete/actors, delete/movies,
+patch/actors, patch/movies requests
+
+POST/movies
+{
+    "error": 401,
+    "message": "Unauthorized"
+    "success": false
+}
+
+POST/actors
+{
+    "error": 401,
+    "message": "Unauthorized"
+    "success": false
+}
+
+DELETE/movies
+{
+    "error": 401,
+    "message": "Unauthorized"
+    "success": false
+}
+DELETE/actors
+{
+    "error": 401,
+    "message": "Unauthorized"
+    "success": false
+}
+PATCH/movies
+{
+    "error": 401,
+    "message": "Unauthorized"
+    "success": false
+}
+PATCH/actors
+{
+    "error": 401,
+    "message": "Unauthorized"
+    "success": false
+}
+
+#RBAC for Casting Director
 
 GET/movies
 It returns a list of movies.
@@ -111,7 +185,7 @@ GET/actors
 It returns a list of actors.
 If it finds the actor it returns success = True, else the following message:"
 There is no actor with that name in our system"
-Example of successful get/actors request:
+Examples of successful get/actors request:
 {
     "actors": [
         {
@@ -121,19 +195,6 @@ Example of successful get/actors request:
             "movie_id": 1
         },
     ],
-    "success": true
-}
-
-POST/movies
-
-It creates a new movie using JSON request parameters and adds it to the database.
-If it creates the movie it returns success = True, else it aborts with 422 error message.
-Example of successful post/movies request:
-{
-    "new_movie": {
-            "title": "Test movie2"
-            "release_date": "Mon, 3 Aug 2020 00:00:00 CET",
-        },
     "success": true
 }
 
@@ -150,6 +211,15 @@ Example of successful post/movies request:
         "gender": "male",
         "movie_id": 6
     },
+    "success": true
+}
+
+DELETE/actors/<int:id>
+It deletes the actors present in the database
+If it deletes the actor it returns success = True, else it aborts with 422 error message.
+Example of successful delete/actors request:
+{
+    "deleted_actor": 4,
     "success": true
 }
 
@@ -180,6 +250,68 @@ Example of successful patch/actors request:
     }
 }
 
+Examples of unsuccessful post/movies, delete/movies requests:
+
+POST/movies
+{
+    "error": 401,
+    "message": "Unauthorized"
+    "success": false
+}
+
+DELETE/movies
+{
+    "error": 401,
+    "message": "Unauthorized"
+    "success": false
+}
+
+#RBAC for Executive Producer
+
+GET/movies
+It returns a list of movies.
+If it finds the movie it returns success = True, else the following message:"
+There is no movie with that name in our system"
+Example of successful get/movies request:
+{
+    "movies": [
+        {
+            "title": "Test movie"
+            "release_date": "Fri, 31 Jul 2020 00:00:00 CET",
+        },
+    ],
+    "success": true
+}
+
+GET/actors
+It returns a list of actors.
+If it finds the actor it returns success = True, else the following message:"
+There is no actor with that name in our system"
+Examples of successful get/actors request:
+{
+    "actors": [
+        {
+            "name": "Arthur Schopenhauer",
+            "age": 56,
+            "gender": "male",
+            "movie_id": 1
+        },
+    ],
+    "success": true
+}
+
+POST/movie
+It creates a new movie using JSON request parameters and adds it to the database.
+If it creates the movie it returns success = True, else it aborts with 422 error message.
+Example of successful post/movies request:
+{
+    "new_movie": {
+            "title": "Test movie2"
+            "release_date": "Mon, 3 Aug 2020 00:00:00 CET",
+        },
+    "success": true
+}
+
 DELETE/movies/<int:id>
 
 It deletes the movies present in the database.
@@ -190,6 +322,22 @@ Example of successful delete/movies request:
     "success": true
 }
 
+POST/actors
+
+It creates a new actor using JSON request parameters and adds it to the database.
+If it creates the actor it returns success = True, else it aborts with 422 error message.
+Example of successful post/movies request:
+
+{
+    "new_actor": {
+        "name": "John Taylor",
+        "age": 25,
+        "gender": "male",
+        "movie_id": 6
+    },
+    "success": true
+}
+
 DELETE/actors/<int:id>
 It deletes the actors present in the database
 If it deletes the actor it returns success = True, else it aborts with 422 error message.
@@ -197,4 +345,31 @@ Example of successful delete/actors request:
 {
     "deleted_actor": 4,
     "success": true
+}
+
+PATCH/movies
+
+It modifies a movie present in the database.
+If modification is successful it returns success = True, else it aborts with 422 error message.
+Example of successful patch/movies request:
+{
+    "success": true,
+    "updated_movie": {
+        "title": "Test movie3"
+        "release_date": "Fri, 7 Aug 2020 00:00:00 CET",
+    }
+}
+
+PATCH/actors
+
+It modifies an actor present in the database.
+If modification is successful it returns success = True, else it aborts with 422 error message.
+Example of successful patch/actors request:
+{
+    "success": true,
+        "name": "John Taylor",
+        "age": 45,
+        "gender": "male",
+        "movie_id": 8
+    }
 }
